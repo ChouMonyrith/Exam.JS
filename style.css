@@ -1,0 +1,198 @@
+/* General Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+/* Header and Section Headers */
+h2 {
+  color: #2e8b57;
+}
+
+h3 {
+  color: #4682b4;
+}
+
+/* Navigation Bar */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  background-color: black;
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.nav button {
+  border: none;
+  background-color: black;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  margin: 0 70px;
+}
+
+.nav button:hover {
+  border-bottom: 2px solid white;
+  font-weight: bolder;
+}
+
+/* Section Visibility */
+.section {
+  display: none;
+}
+
+.section.active {
+  display: block;
+}
+
+/* Add Button */
+.addButton {
+  height: 40px;
+  width: 110px;
+  border: 2px solid black;
+  background-color: black;
+  color: azure;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.addButton:hover {
+  text-decoration: underline;
+  font-size: larger;
+}
+
+/* Search Bar and Button Styling */
+#searchVisitor,
+#bookList input {
+  height: 30px;
+  width: 30%;
+  border: 2px solid black;
+}
+
+.SearchButton button,
+#bookList button {
+  height: 35px;
+  width: 75px;
+  border: 2px solid black;
+  background-color: black;
+  color: #f2f2f2;
+  cursor: pointer;
+}
+
+#sortOption {
+  height: 35px;
+  width: 10%;
+  border: 2px solid black;
+  background-color: black;
+  color: #f2f2f2;
+  cursor: pointer;
+}
+/* Book Form Styling */
+.bookForm,
+.visitorsForm {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bookForm label,
+.visitorsForm label {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #333;
+}
+
+.bookForm input,
+.visitorsForm input {
+  padding: 8px;
+  margin-top: 4px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.bookForm button[type="submit"],
+.visitorsForm button[type="submit"] {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-size: 16px;
+}
+
+.bookForm button[type="submit"]:hover,
+.visitorsForm button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+/* Tables */
+#booksTable,
+#visitorsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#booksTable th,
+#visitorsTable th {
+  padding: 12px 8px;
+  background-color: #4caf50;
+  color: white;
+  border: 1px solid #000;
+}
+
+#booksTable td,
+#visitorsTable td {
+  padding: 2px;
+  border: 1px solid #000;
+  text-align: center;
+}
+
+#booksTable tr:nth-child(even),
+#visitorsTable tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#booksTable tr:hover,
+#visitorsTable tr:hover {
+  background-color: #ddd;
+}
+
+/* Popover Styling */
+.popover {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popover.visible {
+  display: flex;
+}
+
+.popover-content {
+  background-color: white;
+  padding: 20px 30px;
+  border-radius: 8px;
+  width: 320px;
+  max-width: 90%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+}

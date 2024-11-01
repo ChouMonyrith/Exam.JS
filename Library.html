@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h2>Library</h2>
+    <div class="nav">
+      <button class="books" onclick="showSection('books')">Books</button>
+      <button class="visitors" onclick="showSection('visitors')">
+        Visitors
+      </button>
+      <button class="cards" onclick="showSection('cards')">Cards</button>
+      <button class="statistics" onclick="showSection('statistics')">
+        Statistics
+      </button>
+    </div>
+    <div id="books" class="section">
+      <h2>Books</h2>
+      <button class="addButton" onclick="toggleBookForm()">Add Book</button>
+      <div id="bookList">
+        <h2>List of Books</h2>
+        <input type="text" id="searchBooks" placeholder="Search books..." />
+        <button type="button" onclick="searchBook()">Search</button>
+        <select name="" id="sortOption" onchange="sortBooks()">
+          <option value="ID">Sort by ID</option>
+          <option value="Title">Sort by Title</option>
+          <option value="yearOfPublish">Sort by Year</option>
+        </select>
+
+        <table id="booksTable">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Year Of Publish</th>
+              <th>Publisher Name</th>
+              <th>Number Of Pages</th>
+              <th>Copies</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="booksTBody"></tbody>
+        </table>
+      </div>
+      <div id="bookFormPopover" class="popover">
+        <div class="popover-content">
+          <span class="close" onclick="toggleBookForm()">&times;</span>
+          <form class="bookForm" onsubmit="addBook(event)">
+            <label for="bookID">ID:</label>
+            <input type="number" id="bookID" required min="1" /><br />
+
+            <label for="bookTitle">Title:</label>
+            <input type="text" id="bookTitle" required /><br />
+
+            <label for="bookAuthor">Author:</label>
+            <input type="text" id="bookAuthor" required /><br />
+
+            <label for="yearOfPublish">Date of Publish:</label>
+            <input type="date" id="yearOfPublish" required /><br />
+
+            <label for="publisherName">Publisher Name:</label>
+            <input type="text" id="publisherName" required /><br />
+
+            <label for="numberOfPages">Number of Pages:</label>
+            <input type="number" id="numberOfPages" required min="1" /><br />
+
+            <label for="copies">Copies:</label>
+            <input type="number" id="copies" required min="1" /><br />
+
+            <button type="submit">Confirm</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div id="visitors" class="section">
+      <h2>Visitors</h2>
+      <button class="addButton" onclick="toggleVisitorForm()">
+        Add Visitor
+      </button>
+      <h2>List of Visitors</h2>
+      <div class="SearchButton">
+        <input
+          type="text"
+          id="searchVisitor"
+          placeholder="Search Visitors..."
+        />
+        <button type="button" onclick="searchVisitor()">Search</button>
+
+        <select name="" id="sortOption" onchange="sortVisitors()">
+          <option value="ID">Sort by ID</option>
+          <option value="Name">Sort by Name</option>
+          <option value="DateTime">Sort By DateTime</option>
+        </select>
+      </div>
+
+      <table id="visitorsTable" class="SearchButton">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Register Date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="visitorsTBody"></tbody>
+      </table>
+    </div>
+    <div id="visitorsPopover" class="popover">
+      <div class="popover-content">
+        <span class="close" onclick="toggleVisitorForm()">&times;</span>
+        <form class="visitorsForm" onsubmit="addVisitor(event)">
+          <label for="visitorsID">ID:</label>
+          <input type="number" id="visitorsID" required min="1" /><br />
+
+          <label for="visitorsName">Name:</label>
+          <input type="text" id="visitorsName" required /><br />
+
+          <label for="contact">Contact:</label>
+          <input type="text" id="contact" required /><br />
+
+          <label for="registerDate">Register Date:</label>
+          <input type="date" id="registerDate" required /><br />
+
+          <button type="submit">Confirm</button>
+        </form>
+      </div>
+    </div>
+    <div id="cards" class="section" style="display: none">
+      <h2>Cards</h2>
+    </div>
+    <div id="statistics" class="section" style="display: none">
+      <h2>Statistics</h2>
+    </div>
+    <script src="./books.js"></script>
+    <script src="./visitor.js"></script>
+  </body>
+</html>
